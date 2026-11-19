@@ -102,12 +102,17 @@ body.revealed .d4{transition-delay:1.5s}body.revealed .d5{transition-delay:1.7s}
 .cd{direction:ltr !important}
 
 /* لوحة الباب بطابع نجدي */
-.intro-label{top:27%;padding:30px 30px 26px;min-width:290px;border-radius:2px;border:none;background:var(--paper);
-  box-shadow:0 18px 45px rgba(0,0,0,.45), inset 0 0 0 3px var(--gold), inset 0 0 0 7px var(--paper), inset 0 0 0 8.5px var(--clay)}
-.intro-label:before,.intro-label:after{content:"";position:absolute;left:0;right:0;height:16px;
-  background:conic-gradient(from 135deg at 50% 0,var(--clay) 90deg,transparent 0) 0 0/16px 16px repeat-x}
-.intro-label:before{top:-15px;transform:scaleY(-1)}
-.intro-label:after{bottom:-15px}
+.intro-label{top:27%;padding:34px 34px 30px;min-width:300px;border-radius:0;border:none;box-shadow:none;
+  filter:drop-shadow(0 18px 30px rgba(0,0,0,.45));
+  background:
+   conic-gradient(from -45deg at 50% 100%,var(--clay) 90deg,transparent 0) top/18px 10px repeat-x,
+   conic-gradient(from 135deg at 50% 0,var(--clay) 90deg,transparent 0) bottom/18px 10px repeat-x,
+   conic-gradient(from 45deg at 0 50%,var(--clay) 90deg,transparent 0) right/10px 18px repeat-y,
+   conic-gradient(from 225deg at 100% 50%,var(--clay) 90deg,transparent 0) left/10px 18px repeat-y,
+   conic-gradient(from -45deg at 50% 100%,var(--gold) 90deg,transparent 0) 9px 12px/18px 7px repeat-x,
+   conic-gradient(from 135deg at 50% 0,var(--gold) 90deg,transparent 0) 9px calc(100% - 12px)/18px 7px repeat-x,
+   var(--paper)}
+.intro-label:before,.intro-label:after{display:none}
 .intro-label img{display:block;width:190px;margin:0 auto 12px}
 .intro-label b{font-size:30px}
 .intro-label .tri{display:flex;justify-content:center;gap:5px;margin:10px 0 2px}
