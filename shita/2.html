@@ -150,8 +150,8 @@ body.revealed .d4{transition-delay:1.5s}body.revealed .d5{transition-delay:1.7s}
 .contact{margin-top:20px;text-align:center;border-top:1.5px solid var(--sand2);padding-top:16px}
 .contact .lbl{font-size:13px;color:var(--muted)}
 .contact .phone{display:block;text-decoration:none;font-size:22px;font-weight:700;color:var(--clay);direction:rtl;unicode-bidi:isolate;margin:4px 0 10px;letter-spacing:.5px}
-.cbtns{display:flex;justify-content:center;gap:10px}
-.cbtns a{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:var(--clay2);border:1.5px solid var(--clay);border-radius:4px;padding:8px 18px;font-weight:600;font-size:14px;background:#fff}
+.cbtns{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.cbtns a,.cbtns button{font:inherit;cursor:pointer;display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:var(--clay2);border:1.5px solid var(--clay);border-radius:4px;padding:8px 14px;font-weight:600;font-size:14px;background:#fff}
 .cbtns svg{width:16px;height:16px}
 </style>
 </head>
@@ -206,10 +206,11 @@ body.revealed .d4{transition-delay:1.5s}body.revealed .d5{transition-delay:1.7s}
     </section>
     <section class="contact reveal d7">
       <div class="lbl">للاستفسار والتواصل</div>
-      <a class="phone" href="tel:0566611262" target="_top"><bdo dir="ltr">٠٥٦ ٦٦١ ١٢٦٢</bdo></a>
+      <a class="phone" href="tel:0566611262"><bdo dir="ltr">٠٥٦ ٦٦١ ١٢٦٢</bdo></a>
       <div class="cbtns">
-        <a href="tel:0566611262" target="_top" id="callBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>اتصال</a>
+        <a href="tel:0566611262" id="callBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>اتصال</a>
         <a href="https://wa.me/966566611262" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.5A8.4 8.4 0 1 1 21 11.5z"/></svg>واتساب</a>
+        <button type="button" id="copyBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>نسخ الرقم</button>
       </div>
     </section>
     <div class="foot reveal d7">مع تحيات <b>بلدية محافظة مرات</b></div>
@@ -339,6 +340,12 @@ function frame(){
 frame();
 }
 </script>
-<script>document.getElementById("callBtn").addEventListener("click",function(e){e.preventDefault();try{window.top.location.href="tel:0566611262"}catch(_){location.href="tel:0566611262"}});</script>
+<script>
+document.getElementById("copyBtn").addEventListener("click", function(){
+  var b=this, done=function(){ b.lastChild.textContent="تم النسخ"; setTimeout(function(){ b.lastChild.textContent="نسخ الرقم"; },2000); };
+  try{ navigator.clipboard.writeText("0566611262").then(done, function(){ fallback(); }); }catch(e){ fallback(); }
+  function fallback(){ var i=document.createElement("input"); i.value="0566611262"; document.body.appendChild(i); i.select(); try{document.execCommand("copy"); done();}catch(_){} i.remove(); }
+});
+</script>
 </body>
 </html>
