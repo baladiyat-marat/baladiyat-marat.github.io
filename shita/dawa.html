@@ -229,7 +229,7 @@ const CONFIG = {
   hospUrl:"https://maps.app.goo.gl/KG7mciprghkKbipbA",   // موقع ضيافة شتاء مرات (نقطة الالتقاء)
                           // رابط الموقع من خرائط قوقل
   // ربط الردود بنموذج قوقل (يُعبّأ عند النشر)
-  formAction:"", entryName:"", entryAttend:"",
+  formAction:"https://docs.google.com/forms/d/e/1FAIpQLSdxPoga3IyqEmmAzrEVCIb885qX8Hfya7ArAXVQN_snfRnlfw/formResponse", entryName:"entry.91141651", entryAttend:"entry.1333634069",
   yesValue:"نعم", noValue:"اعتذر عن الحضور"
 };
 /* ================================================================ */
@@ -299,7 +299,7 @@ async function send(yes){
       fd.append(CONFIG.entryAttend, yes ? CONFIG.yesValue : CONFIG.noValue);
       await fetch(CONFIG.formAction, {method:"POST", mode:"no-cors", body:fd});
     }
-    try{ localStorage.setItem("marat-winter-rsvp", JSON.stringify({name, yes})); }catch(e){}
+    try{ localStorage.setItem("marat-winter-rsvp-final", JSON.stringify({name, yes})); }catch(e){}
     showThanks(name, yes);
   }catch(e){
     err.textContent = "تعذّر الإرسال، تأكد من الاتصال بالإنترنت وحاول مرة ثانية";
@@ -313,7 +313,7 @@ nameI.addEventListener("input", ()=>{ nameI.classList.remove("err"); err.textCon
 document.getElementById("change").onclick = () => { thanks.className="thanks"; formBox.style.display=""; };
 
 try{
-  const saved = JSON.parse(localStorage.getItem("marat-winter-rsvp")||"null");
+  const saved = JSON.parse(localStorage.getItem("marat-winter-rsvp-final")||"null");
   if (saved && saved.name){ nameI.value = saved.name; showThanks(saved.name, saved.yes); }
 }catch(e){}
 
