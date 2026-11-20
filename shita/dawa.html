@@ -319,6 +319,16 @@ try{
   if (saved && saved.name){ nameI.value = saved.name; showThanks(saved.name, saved.yes); }
 }catch(e){}
 
+
+/* عدّاد فتح الدعوة (بدون أسماء) */
+(function(){
+  try{
+    if (location.protocol!=="https:") return;
+    var id; try{ id=localStorage.getItem("marat-winter-dev"); if(!id){ id=Math.random().toString(36).slice(2,10); localStorage.setItem("marat-winter-dev",id);} }catch(e){ id="x"; }
+    var fd=new FormData(); fd.append("entry.2024947211", id);
+    fetch("https://docs.google.com/forms/d/e/1FAIpQLScHRrltUyzSW48BmhsD4w4pERVRiWIIByqDPZMpSDNjweR8gQ/formResponse",{method:"POST",mode:"no-cors",body:fd}).catch(function(){});
+  }catch(e){}
+})();
 /* سماء الليل: نجوم وثلج خفيف */
 const cv = document.getElementById("sky"); if (cv) { const cx = cv.getContext("2d");
 let W,H,stars=[],flakes=[];
