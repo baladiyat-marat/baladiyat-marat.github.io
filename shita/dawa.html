@@ -312,6 +312,7 @@ document.getElementById("bNo").onclick  = () => send(false);
 nameI.addEventListener("input", ()=>{ nameI.classList.remove("err"); err.textContent=""; });
 document.getElementById("change").onclick = () => { thanks.className="thanks"; formBox.style.display=""; };
 
+try{ if (/[?&]reset/.test(location.search)) localStorage.removeItem("marat-winter-rsvp-final"); }catch(e){}
 try{
   const saved = JSON.parse(localStorage.getItem("marat-winter-rsvp-final")||"null");
   if (saved && saved.name){ nameI.value = saved.name; showThanks(saved.name, saved.yes); }
