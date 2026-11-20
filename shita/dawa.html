@@ -85,9 +85,10 @@ body.revealed .d4{transition-delay:1.5s}body.revealed .d5{transition-delay:1.7s}
 .btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
 .btn{font:inherit;font-size:15px;font-weight:600;border-radius:4px;padding:14px 8px;cursor:pointer;display:flex;justify-content:center;align-items:center;gap:6px;white-space:nowrap}
 .btn svg{width:18px;height:18px}
-.yes{background:var(--clay);color:#fff;border:none;box-shadow:0 6px 0 var(--clay2)}
-.yes:active{transform:translateY(3px);box-shadow:0 3px 0 var(--clay2)}
-.no{background:#fff;color:var(--brown);border:1.5px solid var(--sand2)}
+.yes{background:#fff;color:var(--clay2);border:1.5px solid var(--clay)}
+.btn:active{background:var(--clay);color:#fff;border-color:var(--clay)}
+
+.no{background:#fff;color:var(--clay2);border:1.5px solid var(--clay)}
 .btn[disabled]{opacity:.6}
 .thanks{display:none;text-align:center}.thanks.show{display:block;animation:pop .6s ease}
 @keyframes pop{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
