@@ -40,7 +40,7 @@ h1{font-family:"Reem Kufi",sans-serif;font-size:27px;margin-top:14px;color:var(-
 .pin b{position:absolute;top:11px;left:0;right:0;text-align:center;color:#fff;font-size:20px;font-weight:700}
 .stop:active .pin{transform:scale(.92)}
 @keyframes drop{from{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:none}}
-.card{position:absolute;width:150px;top:4px;background:#fff;border:1.5px solid var(--sand2);border-radius:6px;padding:8px 10px;box-shadow:0 6px 16px rgba(74,44,26,.12)}
+.card{position:absolute;width:140px;top:4px;background:#fff;border:1.5px solid var(--sand2);border-radius:6px;padding:8px 10px;box-shadow:0 6px 16px rgba(74,44,26,.12)}
 .stop.r .card{right:62px}
 .stop.l .card{left:62px}
 .card .tm{font-size:12px;color:var(--muted)}
@@ -53,17 +53,16 @@ h1{font-family:"Reem Kufi",sans-serif;font-size:27px;margin-top:14px;color:var(-
 .foot b{color:var(--clay)}
 .foot a{color:var(--clay2);font-weight:600}
 
-.route{margin-top:20px!important;padding:0 10px}
-.dstop{display:flex;gap:14px;align-items:stretch;text-decoration:none;color:inherit;margin-bottom:22px;position:relative}
-.door5{flex:none;width:92px;height:118px;position:relative;background:linear-gradient(90deg,#7a3e20,#9c5530 50%,#7a3e20);border-radius:46px 46px 4px 4px;border:4px solid #c9955c;box-shadow:inset 0 0 0 4px #5e2f17;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.door5:before{content:"";position:absolute;inset:16px 12px 10px;border:2px solid #c9955c99;border-radius:30px 30px 2px 2px;background:linear-gradient(45deg,transparent 46%,#c9955c55 46% 54%,transparent 54%) 0 0/16px 16px,linear-gradient(-45deg,transparent 46%,#c9955c55 46% 54%,transparent 54%) 0 0/16px 16px}
-.door5 b{position:relative;z-index:1;width:40px;height:40px;border-radius:50%;background:#fbf5ea;color:#9c5530;display:grid;place-items:center;font-size:22px;font-weight:700;box-shadow:0 3px 8px rgba(0,0,0,.3)}
-.info5{flex:1;background:#fff;border:1.5px solid var(--sand2);border-radius:6px;padding:12px 14px;display:flex;flex-direction:column;justify-content:center}
-.info5 .tm{font-size:13px;color:var(--muted)}.info5 .tm span{color:var(--blue);font-weight:700;font-size:18px;direction:ltr;unicode-bidi:isolate}
-.info5 h3{font-size:16px;font-weight:700;margin:3px 0 8px;line-height:1.5}
-.info5 .go{align-self:flex-start;display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:600;color:#fff;background:var(--clay);padding:6px 12px;border-radius:4px}
-.info5 .go svg{width:14px;height:14px}
-.dstop:not(:last-child):after{content:"";position:absolute;right:44px;bottom:-22px;height:22px;border-right:3px dotted var(--gold)}
+body{background:#eef2f7!important;background-image:none!important}
+.wall{background:#fff!important;border-radius:22px;margin:16px 12px!important;box-shadow:0 20px 50px rgba(12,29,56,.12)!important}
+.wall:before,.wall:after,.cren{display:none}
+h1{color:#0c1d38!important;font-family:"IBM Plex Sans Arabic"!important;font-weight:700}
+.date{background:#1f5b98!important;border-radius:30px!important}
+.hint{color:#1f5b98!important}
+.card{border:none!important;border-radius:14px!important;background:#f5f8fc!important;box-shadow:none!important}
+.card .go{color:#1f5b98!important}
+.flag{background:#c9955c!important;border-radius:30px!important;font-family:"IBM Plex Sans Arabic"!important;font-weight:700}
+.foot b,.foot a{color:#1f5b98!important}
 </style>
 </head>
 <body>
@@ -76,10 +75,19 @@ h1{font-family:"Reem Kufi",sans-serif;font-size:27px;margin-top:14px;color:var(-
       <h1>مسار رحلة شتاء مرات</h1>
       <p class="sub">الموسم السابع</p>
       <span class="date">الأربعاء ٢٥/١١/٢٠٢٦م</span>
-      <p class="hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>اضغط على أي باب يفتح لك الموقع في الخرائط</p>
+      <p class="hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>اضغط على أي دبوس يفتح لك الموقع في الخرائط</p>
     </header>
 
-    <div class="route" id="route"></div>
+    <div class="route" id="route">
+      <svg class="road" viewBox="0 0 400 1120" id="roadSvg">
+  <rect x="166" y="10" width="68" height="1090" rx="34" fill="#dfe6ef"/>
+  <path id="roadPath" d="M200,10 V1100" fill="none" stroke="#2b3a52" stroke-width="50" stroke-linecap="round"/>
+  <path d="M200,10 V1100" fill="none" stroke="#fff" stroke-width="3" stroke-dasharray="18 14"/>
+  <g fill="#c9955c"><circle cx="150" cy="60" r="3"/><circle cx="250" cy="60" r="3"/><circle cx="150" cy="130" r="3"/><circle cx="250" cy="130" r="3"/><circle cx="150" cy="200" r="3"/><circle cx="250" cy="200" r="3"/><circle cx="150" cy="270" r="3"/><circle cx="250" cy="270" r="3"/><circle cx="150" cy="340" r="3"/><circle cx="250" cy="340" r="3"/><circle cx="150" cy="410" r="3"/><circle cx="250" cy="410" r="3"/><circle cx="150" cy="480" r="3"/><circle cx="250" cy="480" r="3"/><circle cx="150" cy="550" r="3"/><circle cx="250" cy="550" r="3"/><circle cx="150" cy="620" r="3"/><circle cx="250" cy="620" r="3"/><circle cx="150" cy="690" r="3"/><circle cx="250" cy="690" r="3"/><circle cx="150" cy="760" r="3"/><circle cx="250" cy="760" r="3"/><circle cx="150" cy="830" r="3"/><circle cx="250" cy="830" r="3"/><circle cx="150" cy="900" r="3"/><circle cx="250" cy="900" r="3"/><circle cx="150" cy="970" r="3"/><circle cx="250" cy="970" r="3"/><circle cx="150" cy="1040" r="3"/><circle cx="250" cy="1040" r="3"/></g>
+</svg>
+      <div class="flag" id="startFlag">البداية</div>
+      <div class="flag" id="endFlag">النهاية</div>
+    </div>
 
     <p class="foot">للاستفسار: <a href="tel:0566611262"><bdo dir="ltr">٠٥٦ ٦٦١ ١٢٦٢</bdo></a><br>مع تحيات <b>بلدية محافظة مرات</b></p>
   </div>
@@ -93,9 +101,25 @@ const STOPS = [
   {n:"٣", time:"٦:٣٠", when:"مساءً", title:"مقر الفعاليات: بوليفارد مرات", url:"https://maps.app.goo.gl/f8JwgLzqxqVq2drF8", at:0.62},
   {n:"٤", time:"٨:٣٠", when:"مساءً", title:"وجبة العشاء: استراحة البلدية", url:"https://maps.app.goo.gl/jfT38bAYYDaQ3d4D6", at:0.86}
 ];
-const route=document.getElementById("route");
-const pin='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>';
-STOPS.forEach(s=>{route.insertAdjacentHTML("beforeend",'<a class="dstop" href="'+s.url+'" target="_blank" rel="noopener"><div class="door5"><b>'+s.n+'</b></div><div class="info5"><div class="tm">الساعة <span>'+s.time+'</span> '+s.when+'</div><h3>'+s.title+'</h3><span class="go">'+pin+'افتح الموقع</span></div></a>')});
+const route=document.getElementById("route"), svg=document.getElementById("roadSvg"), path=document.getElementById("roadPath");
+const pinSvg='<svg viewBox="0 0 54 66"><path d="M27 64C27 64 4 40 4 25A23 23 0 0 1 50 25C50 40 27 64 27 64Z" fill="#1f5b98" stroke="#fff" stroke-width="3"/><circle cx="27" cy="25" r="15" fill="#164a7f"/></svg>';
+const goIc='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg>';
+const L=path.getTotalLength();
+STOPS.forEach((s,i)=>{
+  const p=path.getPointAtLength(L*s.at);
+  const a=document.createElement("a");
+  a.href=s.url; a.target="_blank"; a.rel="noopener";
+  a.className="stop "+(i%2?"l":"r");
+  a.style.left=(p.x/400*100)+"%"; a.style.top=(p.y/1120*100)+"%";
+  a.innerHTML='<div class="pin" style="animation-delay:'+(0.2+i*0.25)+'s">'+pinSvg+'<b>'+s.n+'</b></div>'+
+    '<div class="card"><div class="tm">الساعة <span>'+s.time+'</span> '+s.when+'</div><h3>'+s.title+'</h3><span class="go">'+goIc+'افتح الموقع</span></div>';
+  route.appendChild(a);
+});
+// البداية والنهاية
+const sp=path.getPointAtLength(0), ep=path.getPointAtLength(L);
+const sf=document.getElementById("startFlag"), ef=document.getElementById("endFlag");
+sf.style.left=(sp.x/400*100)+"%"; sf.style.top=((sp.y+8)/1120*100)+"%";
+ef.style.left=(ep.x/400*100)+"%"; ef.style.top=((ep.y-6)/1120*100)+"%";
 </script>
 </body>
 </html>
