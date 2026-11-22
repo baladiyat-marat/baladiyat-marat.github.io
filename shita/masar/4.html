@@ -91,7 +91,6 @@ h1{font-family:"Amiri",serif!important;font-size:32px!important;color:#5a3a1a!im
 </style>
 </head>
 <body>
-<a href="./" style="position:fixed;top:12px;left:12px;z-index:50;background:rgba(255,255,255,.92);color:#0c1d38;text-decoration:none;font:600 13px 'IBM Plex Sans Arabic',sans-serif;padding:8px 14px;border-radius:30px;box-shadow:0 4px 14px rgba(0,0,0,.25)">← كل التصاميم</a>
 <main>
   <div class="cren top"></div>
   <div class="wall">
@@ -110,6 +109,7 @@ h1{font-family:"Amiri",serif!important;font-size:32px!important;color:#5a3a1a!im
   <p>تقع محافظة مرات في إقليم الوشم شمالي منطقة الرياض، على بعد ١٥٧ كم شمال غرب العاصمة، ويتبعها أربعة مراكز: ثرمداء وأثيثية ولبخة وحويتة.</p>
   <div class="more">
     <p>عُرفت قديماً بموقعها على درب الحاج، واتخذها الملك عبدالعزيز -رحمه الله- محطةً في طريقه بين الرياض ومكة المكرمة، فبنى فيها قصره عام ١٣٥٠هـ.</p>
+    <p>ومن معالمها <b>بئر الوليدي</b>، المنسوب في الروايات المتداولة إلى الصحابي الجليل خالد بن الوليد رضي الله عنه، إذ يُروى أنه حُفر حين مرّ بمرات أيام حروب الردة ليساند ماء غدير كميت، ولا يزال قائماً إلى اليوم.</p>
     <p>وتحتضن مرات بلدتها التاريخية التي يجري العمل على تأهيلها وجهةً تراثية وسياحية ضمن المسار الثقافي لمنطقة الرياض، وهي المحطة الثانية في رحلتكم اليوم.</p>
   </div>
   <button type="button" onclick="this.closest('.about').classList.toggle('open');this.querySelector('span').textContent=this.closest('.about').classList.contains('open')?'إخفاء':'اقرأ المزيد'"><span>اقرأ المزيد</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg></button>
@@ -119,10 +119,49 @@ h1{font-family:"Amiri",serif!important;font-size:32px!important;color:#5a3a1a!im
 
     <div class="route" id="route">
       <svg class="road" viewBox="0 0 400 1120" id="roadSvg">
-  <path id="roadPath" d="M200,10 C200,90 70,110 80,200 C90,300 330,300 320,410 C310,520 80,520 85,630 C90,740 320,740 315,850 C310,960 200,980 200,1100" fill="none" stroke="#8b5a2b" stroke-width="5" stroke-dasharray="2 12" stroke-linecap="round"/>
+  <path id="roadPath" d="M84,24 C84,90 78,140 80,200 C90,300 330,300 320,410 C310,520 80,520 85,630 C90,740 320,740 315,850 C310,960 200,980 200,1100" fill="none" stroke="#8b5a2b" stroke-width="5" stroke-dasharray="2 12" stroke-linecap="round"/>
   <g transform="translate(330,90)" fill="none" stroke="#8b5a2b" stroke-width="1.5"><circle r="34"/><circle r="26" stroke-dasharray="2 4"/><path d="M0,-44 L7,0 L0,44 L-7,0Z" fill="#8b5a2b" stroke="none" opacity=".8"/><path d="M-44,0 L0,6 L44,0 L0,-6Z" fill="#b08850" stroke="none" opacity=".7"/><text y="-48" text-anchor="middle" font-size="13" fill="#5a3a1a" stroke="none" font-family="Amiri">ش</text></g>
-  <g fill="#a57a45" opacity=".55" font-family="Amiri" font-size="22"><text x="40" y="380">⛰</text><text x="330" y="620">⛰</text><text x="30" y="900">⛰</text></g>
-  <g stroke="#a57a45" stroke-width="1.2" fill="none" opacity=".5"><path d="M20,520 q20,-10 40,0 t40,0"/><path d="M290,260 q20,-10 40,0 t40,0"/><path d="M260,1040 q20,-10 40,0 t40,0"/></g>
+  <g class="ill"><g transform="translate(260,199) scale(.85)" stroke="#6b4423" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M0,74 L22,40 L34,48 L52,20 L74,44 L84,36 L112,74Z" fill="#d9bd8e" stroke-width="1.1"/>
+<path d="M52,20 L48,34 M52,20 L58,30 M22,40 L26,50" fill="none" stroke-width=".9" opacity=".7"/>
+<path d="M2,96 Q56,90 110,96" fill="none" stroke-width="1" opacity=".6"/>
+<path d="M14,94 L20,66 Q36,58 46,66 Q56,56 66,66 Q76,58 92,66 L98,94Z" fill="#4a3426"/>
+<g fill="none" stroke="#e9d6b0" stroke-width="1.1" opacity=".8"><path d="M18,78 Q56,70 94,78"/><path d="M17,86 Q56,79 96,86"/></g>
+<path d="M44,94V78h24v16" fill="#7a2e1a" stroke="#4a3426"/>
+<g fill="none" stroke-width=".9"><path d="M20,66 L6,94"/><path d="M92,66 L106,94"/><path d="M46,66V58M66,66V56"/></g>
+<g transform="translate(30,96)"><path d="M-6,0h12" fill="none"/><path d="M-4,0q-2,-7 4,-10q-1,5 3,6q2,-5 0,-8q5,4 1,12Z" fill="#e58a3a" stroke="#b5531f" stroke-width="1"/></g>
+<text x="56" y="114" text-anchor="middle" font-family="Amiri" font-size="14.7" font-weight="700" fill="#5a3a1a" stroke="none">منتزه جبل كميت</text></g><g transform="translate(8,346) scale(.8)" stroke="#6b4423" stroke-width="1.3" stroke-linejoin="round">
+<path d="M92,96 Q60,90 4,96" fill="none" stroke-width="1" opacity=".6"/>
+<g fill="#e2c595"><path d="M10,96V52h34v44Z"/><path d="M40,96V34h30v62Z"/><path d="M66,96V58h28v38Z"/></g>
+<g fill="#cfa772"><path d="M10,52l3.4,-6 3.4,6 3.4,-6 3.4,6 3.4,-6 3.4,6 3.4,-6 3.4,6 3.4,-6 3.4,6Z"/><path d="M40,34l3,-6 3,6 3,-6 3,6 3,-6 3,6 3,-6 3,6 3,-6 3,6Z"/><path d="M66,58l3.5,-6 3.5,6 3.5,-6 3.5,6 3.5,-6 3.5,6 3.5,-6 3.5,6Z"/></g>
+<g fill="#6b4423" stroke="none"><path d="M51,46l3,-4 3,4Z"/><path d="M48,47l3,-4 3,4Z" opacity="0"/><path d="M20,62l3,-4 3,4Z"/><path d="M75,68l3,-4 3,4Z"/></g>
+<g fill="#7a2e1a" stroke="none"><rect x="21" y="72" width="7" height="11"/><rect x="50" y="56" width="6" height="9"/><rect x="74" y="76" width="7" height="10"/></g>
+<path d="M51,96V78a4,4 0 0 1 8,0V96" fill="#7a2e1a"/>
+<g fill="none" stroke-width="1.4"><path d="M88,96 Q86,70 92,48"/><path d="M92,48q-12,-2 -18,6M92,48q-6,-10 -16,-10M92,48q2,-12 10,-14M92,48q10,-4 14,4M92,48q-14,4 -16,14"/></g>
+<text x="50" y="114" text-anchor="middle" font-family="Amiri" font-size="15.6" font-weight="700" fill="#5a3a1a" stroke="none">البلدة التاريخية</text></g><g transform="translate(290,684) scale(.76)" stroke="#6b4423" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M6,100 L46,46 L64,46 L108,100Z" fill="#e2c595"/>
+<path d="M55,50V58M55,66V76M55,86V100" fill="none" stroke="#fff8e6" stroke-width="2.2"/>
+<path d="M40,48 Q55,40 70,48" fill="none" stroke-width="1"/>
+<path d="M12,40 Q34,52 48,44" fill="none" stroke-width=".8" stroke-dasharray="1 3"/><path d="M98,40 Q76,52 62,44" fill="none" stroke-width=".8" stroke-dasharray="1 3"/>
+<g fill="#f2c46b" stroke="none"><circle cx="20" cy="44" r="1.6"/><circle cx="30" cy="47" r="1.6"/><circle cx="40" cy="47" r="1.6"/><circle cx="90" cy="44" r="1.6"/><circle cx="80" cy="47" r="1.6"/><circle cx="70" cy="47" r="1.6"/></g>
+<g stroke-width="1.6"><g transform="translate(4,96) scale(1)" fill="none"><path d="M0,0Q-2,-22 2,-44"/><path d="M2,-44q-12,-2 -18,6M2,-44q-6,-10 -16,-10M2,-44q2,-12 10,-14M2,-44q10,-4 14,4M2,-44q-14,4 -16,14M2,-44q12,2 16,12"/></g><g transform="translate(106,96) scale(1)" fill="none"><path d="M0,0Q-2,-22 2,-44"/><path d="M2,-44q-12,-2 -18,6M2,-44q-6,-10 -16,-10M2,-44q2,-12 10,-14M2,-44q10,-4 14,4M2,-44q-14,4 -16,14M2,-44q12,2 16,12"/></g><g transform="translate(30,64) scale(0.55)" fill="none"><path d="M0,0Q-2,-22 2,-44"/><path d="M2,-44q-12,-2 -18,6M2,-44q-6,-10 -16,-10M2,-44q2,-12 10,-14M2,-44q10,-4 14,4M2,-44q-14,4 -16,14M2,-44q12,2 16,12"/></g><g transform="translate(82,64) scale(0.55)" fill="none"><path d="M0,0Q-2,-22 2,-44"/><path d="M2,-44q-12,-2 -18,6M2,-44q-6,-10 -16,-10M2,-44q2,-12 10,-14M2,-44q10,-4 14,4M2,-44q-14,4 -16,14M2,-44q12,2 16,12"/></g></g>
+<g stroke-width="1.4"><g transform="translate(20,96) scale(1)"><path d="M0,0V-40" fill="none"/><path d="M0,-40h-6" fill="none"/><circle cx="-6" cy="-36" r="3" fill="#f2c46b"/><circle cx="-6" cy="-36" r="7" fill="#f2c46b" stroke="none" opacity=".35"/></g><g transform="translate(92,96) scale(1)"><path d="M0,0V-40" fill="none"/><path d="M0,-40h-6" fill="none"/><circle cx="-6" cy="-36" r="3" fill="#f2c46b"/><circle cx="-6" cy="-36" r="7" fill="#f2c46b" stroke="none" opacity=".35"/></g></g>
+<path d="M44,46V30a11,11 0 0 1 22,0V46" fill="none" stroke="#7a2e1a" stroke-width="2"/><path d="M41,30h28" stroke="#7a2e1a" stroke-width="2"/>
+<g fill="#1f5b98" stroke="none"><circle cx="48" cy="22" r="1.2"/><circle cx="55" cy="18" r="1.4"/><circle cx="62" cy="22" r="1.2"/></g>
+<text x="55" y="118" text-anchor="middle" font-family="Amiri" font-size="16.4" font-weight="700" fill="#5a3a1a" stroke="none">بوليفارد مرات</text></g><g transform="translate(4,860) scale(.74)" stroke="#6b4423" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M2,96 Q48,91 96,96" fill="none" stroke-width="1" opacity=".6"/>
+<path d="M26,70V40h46v30" fill="#e2c595"/>
+<path d="M26,40l3.3,-5 3.3,5 3.3,-5 3.3,5 3.3,-5 3.3,5 3.3,-5 3.3,5 3.3,-5 3.3,5 3.3,-5 3.3,5 3.3,-5 3.3,5Z" fill="#cfa772"/>
+<g fill="#7a2e1a" stroke="none"><rect x="33" y="48" width="7" height="9"/><rect x="58" y="48" width="7" height="9"/></g>
+<path d="M46,50l3,-4 3,4Z" fill="#6b4423" stroke="none"/>
+<path d="M6,96V68h86v28Z" fill="#ead2a2"/>
+<path d="M6,68l3.3,-5 3.3,5 3.3,-5 3.3,5 3.3,-5 3.3,5 3.3,-5 3.3,5 3.3,-5 3.3,5 3.3,-5 3.3,5 3.3,-5 3.3,5 3.3,-5 3.3,5 3.3,-5 3.3,5 3.3,-5 3.3,5 3.3,-5 3.3,5 3.3,-5 3.3,5 3.3,-5 3.3,5Z" fill="#cfa772"/>
+<path d="M38,96V80a11,11 0 0 1 22,0V96" fill="#7a2e1a"/><path d="M49,70V96" stroke="#4a2a18" stroke-width="1"/>
+<g fill="#f2c46b"><circle cx="16" cy="80" r="2.4"/><circle cx="82" cy="80" r="2.4"/></g>
+<g fill="#f2c46b" stroke="none" opacity=".35"><circle cx="16" cy="80" r="6"/><circle cx="82" cy="80" r="6"/></g>
+<g fill="none" stroke-width="1.4"><path d="M88,68 Q86,48 90,30"/><path d="M90,30q-12,-2 -18,6M90,30q-6,-10 -16,-10M90,30q2,-12 10,-14M90,30q8,-2 8,6M90,30q-14,4 -16,14"/></g>
+<text x="49" y="114" text-anchor="middle" font-family="Amiri" font-size="16.9" font-weight="700" fill="#5a3a1a" stroke="none">استراحة البلدية</text></g></g>
+  <g stroke="#a57a45" stroke-width="1.2" fill="none" opacity=".5"><path d="M150,540 q20,-10 40,0 t40,0"/><path d="M20,318 q20,-10 40,0 t40,0"/><path d="M260,1040 q20,-10 40,0 t40,0"/></g>
 </svg>
       <div class="flag" id="startFlag">البداية</div>
       <div class="flag" id="endFlag">النهاية</div>
@@ -135,10 +174,10 @@ h1{font-family:"Amiri",serif!important;font-size:32px!important;color:#5a3a1a!im
 
 <script>
 const STOPS = [
-  {n:"١", time:"٤:٣٠", when:"عصراً", title:"نقطة الالتقاء: ضيافة شتاء مرات", url:"https://maps.app.goo.gl/KG7mciprghkKbipbA", at:0.13},
-  {n:"٢", time:"٥:٣٠", when:"مساءً", title:"جولة في البلدة التاريخية", url:"https://maps.app.goo.gl/1NLRaWko98V4mhSm7", at:0.37},
-  {n:"٣", time:"٦:٣٠", when:"مساءً", title:"مقر الفعاليات: بوليفارد مرات", url:"https://maps.app.goo.gl/f8JwgLzqxqVq2drF8", at:0.62},
-  {n:"٤", time:"٨:٣٠", when:"مساءً", title:"وجبة العشاء: استراحة البلدية", url:"https://maps.app.goo.gl/jfT38bAYYDaQ3d4D6", at:0.86}
+  {n:"١", time:"٤:٣٠", when:"عصراً", title:"نقطة الالتقاء: ضيافة شتاء مرات", url:"https://maps.app.goo.gl/KG7mciprghkKbipbA", at:0.0958},
+  {n:"٢", time:"٥:٣٠", when:"مساءً", title:"جولة في البلدة التاريخية", url:"https://maps.app.goo.gl/1NLRaWko98V4mhSm7", at:0.345, dy:24},
+  {n:"٣", time:"٦:٣٠", when:"مساءً", title:"مقر الفعاليات: بوليفارد مرات", url:"https://maps.app.goo.gl/f8JwgLzqxqVq2drF8", at:0.605},
+  {n:"٤", time:"٨:٣٠", when:"مساءً", title:"وجبة العشاء: استراحة البلدية", url:"https://maps.app.goo.gl/jfT38bAYYDaQ3d4D6", at:0.8545}
 ];
 const route=document.getElementById("route"), svg=document.getElementById("roadSvg"), path=document.getElementById("roadPath");
 const pinSvg='<svg viewBox="0 0 54 66"><path d="M27 64C27 64 4 40 4 25A23 23 0 0 1 50 25C50 40 27 64 27 64Z" fill="#7a2e1a" stroke="#f4e8cc" stroke-width="3"/><circle cx="27" cy="25" r="15" fill="#f4e8cc" opacity=".25"/></svg>';
@@ -152,6 +191,7 @@ STOPS.forEach((s,i)=>{
   a.style.left=(p.x/400*100)+"%"; a.style.top=(p.y/1120*100)+"%";
   a.innerHTML='<div class="pin" style="animation-delay:'+(0.2+i*0.25)+'s">'+pinSvg+'<b>'+s.n+'</b></div>'+
     '<div class="card"><div class="tm">الساعة <span>'+s.time+'</span> '+s.when+'</div><h3>'+s.title+'</h3></div>';
+  if(s.dy) a.querySelector('.card').style.top=(4+s.dy)+'px';
   route.appendChild(a);
 });
 // البداية والنهاية
