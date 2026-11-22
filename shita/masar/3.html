@@ -139,7 +139,7 @@ STOPS.forEach((s,i)=>{
   a.className="stop "+(p.x>200?"r":"l");
   a.style.left=(p.x/400*100)+"%"; a.style.top=(p.y/1120*100)+"%";
   a.innerHTML='<div class="pin" style="animation-delay:'+(0.2+i*0.25)+'s">'+pinSvg+'<b>'+s.n+'</b></div>'+
-    '<div class="card"><div class="tm">الساعة <span>'+s.time+'</span> '+s.when+'</div><h3>'+s.title+'</h3><span class="go">'+goIc+'افتح الموقع</span></div>';
+    '<div class="card"><div class="tm">الساعة <span>'+s.time+'</span> '+s.when+'</div><h3>'+s.title+'</h3></div>';
   route.appendChild(a);
 });
 // البداية والنهاية
