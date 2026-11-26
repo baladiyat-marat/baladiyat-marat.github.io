@@ -122,7 +122,7 @@ footer{text-align:center;padding:26px 16px 34px;font-size:14px;color:#8b6a4a}foo
   <div class="sign"><b>رئيس بلدية محافظة مرات</b><span>م/ رائد بن رضيان العجرفي</span></div>
 </section>
 
-<div class="next"><h2>إلى لقاء في الموسم الثامن</h2></div>
+<div class="next"><h2>نلقاكم في مناسبات قادمة بإذن الله</h2></div>
 <footer>مع تحيات <b>بلدية محافظة مرات</b></footer>
 <script>
 (function(){
@@ -132,25 +132,31 @@ var $=function(i){return document.getElementById(i)};
 var stack=[];
 function open(el){el.hidden=false;document.body.style.overflow='hidden';stack.push(el);try{history.pushState({ov:stack.length},'')}catch(e){}}
 function closeTop(fromPop){var el=stack.pop();if(!el)return;el.hidden=true;if(el.id==='vidOv'){var v=$('vid');v.pause()}
- if(!stack.length)document.body.style.overflow='';if(!fromPop){try{history.back()}catch(e){}}}
-window.addEventListener('popstate',function(){if(stack.length)closeTop(true)});
+ if(!stack.length)document.body.style.overflow='';if(!fromPop){skip++;try{history.back()}catch(e){skip--}}}
+var skip=0;window.addEventListener('popstate',function(){if(skip>0){skip--;return}if(stack.length)closeTop(true)});
 document.querySelectorAll('.ov .x').forEach(function(b){b.onclick=function(){closeTop(false)}});
 $('openVid').onclick=function(){open($('vidOv'));var v=$('vid');try{v.play()}catch(e){}};
+var played=false;$('vid').addEventListener('play',function(){if(!played){played=true;LOG('فيديو')}});
+document.querySelector('.vidin .dl').addEventListener('click',function(){LOG('تحميل')});
 fetch('thikra/g/list.json?v='+Date.now()).then(function(r){return r.json()}).then(function(l){L=l;
  $('gcount').textContent=D(L.length)+' صورة';$('gcount2').textContent=D(L.length)+' صورة';
  var g=$('grid');L.forEach(function(n,i){var im=document.createElement('img');im.loading='lazy';im.src='thikra/g/t/'+n+'.jpg';im.alt='';im.onclick=function(){show(i)};g.appendChild(im)})}).catch(function(){});
 $('openGal').onclick=function(){open($('galOv'))};
-function show(i){cur=(i+L.length)%L.length;$('lbimg').src='thikra/g/'+L[cur]+'.jpg';$('lbc').textContent=D(cur+1)+' / '+D(L.length);
+function show(i){cur=(i+L.length)%L.length;LOG('صورة-'+L[cur]);$('lbimg').src='thikra/g/'+L[cur]+'.jpg';$('lbc').textContent=D(cur+1)+' / '+D(L.length);
  [cur+1,cur-1].forEach(function(j){j=(j+L.length)%L.length;var p=new Image();p.src='thikra/g/'+L[j]+'.jpg'});
  if($('lb').hidden)open($('lb'))}
-$('lbNext').onclick=function(){show(cur+1)};$('lbPrev').onclick=function(){show(cur-1)};
+$('lbNext').onclick=function(e){e.stopPropagation();show(cur+1)};$('lbPrev').onclick=function(e){e.stopPropagation();show(cur-1)};
+$('lbimg').addEventListener('contextmenu',function(){LOG('حفظ-'+L[cur])});
+var moved=false;
+$('lb').addEventListener('click',function(e){if(moved){moved=false;return}if(e.target.closest('.x,.nav'))return;closeTop(false)});
 var sx=null;$('lb').addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
-$('lb').addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;sx=null;if(Math.abs(dx)>45)show(cur+(dx>0?1:-1))});
+$('lb').addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;sx=null;if(Math.abs(dx)>45){moved=true;setTimeout(function(){moved=false},400);show(cur+(dx>0?1:-1))}});
 })();
+var LOG=function(){};
 (function(){if(location.protocol!=="https:")return;
 var code='عام',id='';
 try{id=localStorage.getItem('marat-thikra-dev');if(!id){id=Math.random().toString(36).slice(2,10);localStorage.setItem('marat-thikra-dev',id)}}catch(e){id='x'}
-var f=new FormData();f.append('entry.2024947211','ذكرى|'+code+'|'+id);
-try{fetch('https://docs.google.com/forms/d/e/1FAIpQLScHRrltUyzSW48BmhsD4w4pERVRiWIIByqDPZMpSDNjweR8gQ/formResponse',{method:'POST',mode:'no-cors',body:f})}catch(e){}})();
+LOG=function(ev){try{var f=new FormData();f.append('entry.2024947211','ذكرى|'+ev+'|'+id);fetch('https://docs.google.com/forms/d/e/1FAIpQLScHRrltUyzSW48BmhsD4w4pERVRiWIIByqDPZMpSDNjweR8gQ/formResponse',{method:'POST',mode:'no-cors',body:f})}catch(e){}};
+LOG(code);})();
 </script>
 </body></html>
