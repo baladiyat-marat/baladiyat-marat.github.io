@@ -7,7 +7,7 @@
 @font-face{font-family:Bahij;src:url(thikra/bahij-bold.woff2) format("woff2");font-weight:700;font-display:swap}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Bahij,sans-serif;background:#f4e8cc;color:#4a3220;-webkit-font-smoothing:antialiased}
-.hero{position:relative;min-height:92vh;display:flex;flex-direction:column;justify-content:space-between;color:#fff;
+.hero{position:relative;min-height:80vh;display:flex;flex-direction:column;justify-content:space-between;color:#fff;
 background:linear-gradient(180deg,rgba(30,18,10,.55) 0%,rgba(30,18,10,.25) 35%,rgba(30,18,10,.85) 100%),url(thikra/souq.webp) center/cover}
 .logos{display:flex;align-items:center;justify-content:center;gap:18px;padding:26px 16px 0}
 .logos img{height:44px;width:auto}.logos img.w{height:58px}.logos i{width:1px;height:40px;background:rgba(255,255,255,.5)}
@@ -36,6 +36,30 @@ ol.tl li{display:flex;gap:16px;align-items:center;margin-bottom:26px;position:re
 .vid{display:block;width:100%;max-width:420px;margin:0 auto;border-radius:8px;background:#000;aspect-ratio:9/16;box-shadow:0 8px 22px rgba(74,44,26,.2)}
 .dl{display:flex;align-items:center;justify-content:center;gap:6px;margin:14px auto 0;width:max-content;color:#7a2e1a;font-weight:700;font-size:15px;text-decoration:none;border-bottom:1.5px dotted #7a2e1a;padding-bottom:2px}
 .dl svg{width:18px;height:18px}
+.ics{padding-top:34px}
+.icons{display:flex;justify-content:center;gap:22px}
+.ic{flex:1;max-width:170px;background:none;border:0;font:inherit;color:#4a2c1a;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;padding:0;-webkit-tap-highlight-color:transparent}
+.ic svg{width:100%;max-width:140px;height:auto;filter:drop-shadow(0 8px 14px rgba(74,44,26,.18));transition:transform .15s}
+.ic:active svg{transform:scale(.95)}
+.ic b{font-size:18px;font-weight:700;margin-top:6px}.ic span{font-size:13.5px;color:#8b6a4a;min-height:1em}
+.ov{position:fixed;inset:0;z-index:100;background:rgba(20,12,6,.94);display:flex;align-items:center;justify-content:center}
+.ov[hidden]{display:none}
+.ov .x{position:absolute;top:12px;left:12px;z-index:3;width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,.15);color:#fff;font-size:20px;cursor:pointer}
+.vidin{width:100%;max-width:460px;padding:0 14px;text-align:center}
+.vidin video{width:100%;max-height:78vh;border-radius:8px;background:#000;display:block}
+.vidin .dl{color:#e9c77a;border-bottom-color:#e9c77a}
+.gov{display:block;overflow-y:auto;background:#f4e8cc;-webkit-overflow-scrolling:touch}
+.gbar{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 60px;background:#5a3a1a;color:#fff;font-size:18px}
+.gbar span{font-size:13.5px;color:#e9c77a}
+.gov .x{position:absolute;top:7px;left:10px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;padding:3px;max-width:900px;margin:0 auto}
+.grid img{width:100%;aspect-ratio:1;object-fit:cover;display:block;cursor:pointer;background:#e2d2b0}
+.ghint{text-align:center;font-size:13px;color:#8b6a4a;padding:14px 16px 30px}
+.lb{background:#000;flex-direction:column}
+.lb img{max-width:100%;max-height:86vh;object-fit:contain;-webkit-touch-callout:default;user-select:auto}
+.lbc{position:absolute;top:22px;right:0;left:0;text-align:center;color:#ddd;font-size:14px}
+.nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:64px;border:0;background:rgba(255,255,255,.12);color:#fff;font-size:34px;cursor:pointer;border-radius:8px}
+.prv{right:8px}.nxt{left:8px}
 .gal{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .gal img{width:100%;height:170px;object-fit:cover;border-radius:6px;display:block}
 .gal img.big{grid-column:1/-1;height:auto;aspect-ratio:3/2}
@@ -62,16 +86,35 @@ footer{text-align:center;padding:26px 16px 34px;font-size:14px;color:#8b6a4a}foo
   </div>
 </header>
 
-<section>
-  <div class="head"><div class="orn"><i></i><i></i><i></i></div><h2>مقطع الأمسية</h2></div>
-  <video class="vid" controls playsinline preload="metadata" poster="thikra/poster.jpg"><source src="thikra/thikra.mp4" type="video/mp4"></video>
-  <a class="dl" href="thikra/thikra.mp4" download="مقطع-أمسية-شتاء-مرات.mp4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>حفظ المقطع في جوالك</a>
+<section class="ics">
+  <div class="head"><div class="orn"><i></i><i></i><i></i></div><h2>ذكريات الليلة</h2></div>
+  <div class="icons">
+    <button type="button" class="ic" id="openVid"><svg viewBox="0 0 120 120"><path d="M14 112V44Q14 10 60 6Q106 10 106 44V112Z" fill="#f8eed8" stroke="#8b5a2b" stroke-width="3"/><path d="M14 30l5-7 5 7 5-7 5 7 5-7 5 7 5-7 5 7 5-7 5 7 5-7 5 7 5-7 5 7 5-7 5 7 5-7 5 7" fill="none" stroke="#c9955c" stroke-width="2" opacity=".0"/><circle cx="60" cy="64" r="28" fill="#7a2e1a"/><path d="M52 50L74 64L52 78Z" fill="#fff"/><path d="M22 104h76" stroke="#c9955c" stroke-width="3" stroke-dasharray="2 6" stroke-linecap="round"/></svg><b>مقطع الأمسية</b><span>٤:٤٨ دقيقة</span></button>
+    <button type="button" class="ic" id="openGal"><svg viewBox="0 0 120 120"><path d="M14 112V44Q14 10 60 6Q106 10 106 44V112Z" fill="#f8eed8" stroke="#8b5a2b" stroke-width="3"/><rect x="30" y="42" width="52" height="42" rx="4" fill="#e2c595" stroke="#8b5a2b" stroke-width="2.5" transform="rotate(-8 56 63)"/><rect x="38" y="46" width="52" height="42" rx="4" fill="#fff" stroke="#7a2e1a" stroke-width="2.5"/><path d="M42 82l12-14 9 9 7-6 16 11Z" fill="#7a2e1a"/><circle cx="78" cy="57" r="5" fill="#c9955c"/><path d="M22 104h76" stroke="#c9955c" stroke-width="3" stroke-dasharray="2 6" stroke-linecap="round"/></svg><b>صور الأمسية</b><span id="gcount">&nbsp;</span></button>
+  </div>
 </section>
 
-<section>
-  <div class="head"><div class="orn"><i></i><i></i><i></i></div><h2>لقطات من الليلة</h2></div>
-  <div class="gal"><img class="big" src="thikra/p1.jpg" alt="صورة جماعية لضيوف شتاء مرات"><img class="big" src="thikra/p3.jpg" alt="العرضة السعودية" loading="lazy"><img src="thikra/p2.jpg" alt="العرضة السعودية" loading="lazy"><img src="thikra/p5.jpg" alt="كلمة الترحيب" loading="lazy" style="object-position:55% 30%"><img class="big" src="thikra/p4.jpg" alt="جولة الضيوف" loading="lazy"><img class="big" src="thikra/p6.jpg" alt="في بيت الشعر" loading="lazy"><img class="big" src="thikra/p7.jpg" alt="في المجلس" loading="lazy"></div>
-</section>
+<div class="ov" id="vidOv" hidden>
+  <button class="x" type="button" aria-label="إغلاق">✕</button>
+  <div class="ovin vidin">
+    <video id="vid" controls playsinline preload="none" poster="thikra/poster.jpg"><source src="thikra/thikra.mp4" type="video/mp4"></video>
+    <a class="dl" href="thikra/thikra.mp4" download="مقطع-أمسية-شتاء-مرات.mp4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>حفظ المقطع في جوالك</a>
+  </div>
+</div>
+
+<div class="ov gov" id="galOv" hidden>
+  <div class="gbar"><button class="x" type="button" aria-label="إغلاق">✕</button><b>صور الأمسية</b><span id="gcount2"></span></div>
+  <div class="grid" id="grid"></div>
+  <p class="ghint">اضغط على أي صورة لتكبيرها، واضغط عليها ضغطة طويلة لحفظها</p>
+</div>
+
+<div class="ov lb" id="lb" hidden>
+  <button class="x" type="button" aria-label="إغلاق">✕</button>
+  <div class="lbc" id="lbc"></div>
+  <img id="lbimg" alt="">
+  <button class="nav prv" type="button" id="lbPrev" aria-label="السابقة">›</button>
+  <button class="nav nxt" type="button" id="lbNext" aria-label="التالية">‹</button>
+</div>
 
 <section>
   <div class="head"><div class="orn"><i></i><i></i><i></i></div><h2>كلمة رئيس البلدية</h2></div>
@@ -83,6 +126,28 @@ footer{text-align:center;padding:26px 16px 34px;font-size:14px;color:#8b6a4a}foo
 <div class="next"><h2>إلى لقاء في الموسم الثامن</h2></div>
 <footer>مع تحيات <b>بلدية محافظة مرات</b></footer>
 <script>
+(function(){
+var D=function(n){return String(n).replace(/\d/g,function(d){return "٠١٢٣٤٥٦٧٨٩"[d]})};
+var L=[],cur=0;
+var $=function(i){return document.getElementById(i)};
+var stack=[];
+function open(el){el.hidden=false;document.body.style.overflow='hidden';stack.push(el);try{history.pushState({ov:stack.length},'')}catch(e){}}
+function closeTop(fromPop){var el=stack.pop();if(!el)return;el.hidden=true;if(el.id==='vidOv'){var v=$('vid');v.pause()}
+ if(!stack.length)document.body.style.overflow='';if(!fromPop){try{history.back()}catch(e){}}}
+window.addEventListener('popstate',function(){if(stack.length)closeTop(true)});
+document.querySelectorAll('.ov .x').forEach(function(b){b.onclick=function(){closeTop(false)}});
+$('openVid').onclick=function(){open($('vidOv'));var v=$('vid');try{v.play()}catch(e){}};
+fetch('thikra/g/list.json?v='+Date.now()).then(function(r){return r.json()}).then(function(l){L=l;
+ $('gcount').textContent=D(L.length)+' صورة';$('gcount2').textContent=D(L.length)+' صورة';
+ var g=$('grid');L.forEach(function(n,i){var im=document.createElement('img');im.loading='lazy';im.src='thikra/g/t/'+n+'.jpg';im.alt='';im.onclick=function(){show(i)};g.appendChild(im)})}).catch(function(){});
+$('openGal').onclick=function(){open($('galOv'))};
+function show(i){cur=(i+L.length)%L.length;$('lbimg').src='thikra/g/'+L[cur]+'.jpg';$('lbc').textContent=D(cur+1)+' / '+D(L.length);
+ [cur+1,cur-1].forEach(function(j){j=(j+L.length)%L.length;var p=new Image();p.src='thikra/g/'+L[j]+'.jpg'});
+ if($('lb').hidden)open($('lb'))}
+$('lbNext').onclick=function(){show(cur+1)};$('lbPrev').onclick=function(){show(cur-1)};
+var sx=null;$('lb').addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+$('lb').addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;sx=null;if(Math.abs(dx)>45)show(cur+(dx>0?1:-1))});
+})();
 (function(){if(location.protocol!=="https:")return;
 var code='عام',id='';
 try{id=localStorage.getItem('marat-thikra-dev');if(!id){id=Math.random().toString(36).slice(2,10);localStorage.setItem('marat-thikra-dev',id)}}catch(e){id='x'}
