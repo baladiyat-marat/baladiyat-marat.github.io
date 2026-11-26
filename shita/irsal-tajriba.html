@@ -33,6 +33,7 @@ footer{text-align:center;padding:10px 16px 30px;font-size:13.5px;color:#8b6a4a}
 <footer>بلدية محافظة مرات</footer>
 <script>
 var PAGE="https://baladiyat-marat.github.io/shita/thikra-tajriba.html";
+var CODES=["q9k7", "x2va", "vnwa", "ut9d", "7857", "kq88", "99fs", "cqmh", "99zw", "d278", "wsqu", "5asj", "6hu3", "96mv", "m4a4", "dmcd", "rzb4", "cpdr", "zzx9", "n7at", "hgbp", "kwe5", "9wwd", "sfu9", "78p5", "w5ph", "zckc", "hj3c", "3p2m", "7nn2", "dw9z", "7spa", "9vwy", "7kj4", "rhq8", "ffgd"];
 var NAMES=["احمد عوض الشهري", "بدر مبارك العصيمي", "جاسم الدلبحي", "جهز عبدالله الحزيمي", "خالد الدباسي", "خالد بن حمد اليوسف", "دغيشم فهد الدغيشم", "م/ عبدالله محمد التميمي", "زيد بن خالد العقيل", "سالم بن محمد العيدي", "سامي فتحي عودة", "سعد علي العليان", "سفر العلياني", "عبدالاله المشعل", "عبدالله الحربي", "عبدالله بن شخبوط بن عبدالله الحنابجه", "عبدالله عيد العصيمي", "عبدالملك الهويمل", "علي عسيري", "فارس ال عادي", "فارس بن عبدالله ال عادي", "فهد بن حمد الشبيكي", "فيصل الجهني", "م/ فيصل ظافر القحطاني", "م/ ابراهيم بن سعد ال عون", "م/ ريان محمد الجلاّل", "م/ هيف بن مسفر بن مهوس", "م/ أحمد فهد الدلبحي", "م/ عبدالله القحطاني", "مبارك بدر جميلان الحمادي", "محمد ال عادي", "محمد سالم القحطاني", "محمد علي محمود", "مسفر بن هادي القحطاني", "مسفر محمد القحطاني", "نايف بن فريح الحربي"];
 var KEY="marat-thikra-sent", sent={};
 try{sent=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){}
@@ -41,7 +42,7 @@ var digits=function(n){return String(n).replace(/\d/g,function(d){return "٠١٢
 var ul=document.getElementById("list");
 function prog(){var c=NAMES.filter(function(n){return sent[n]}).length;document.getElementById("prog").textContent="تم الإرسال: "+digits(c)+" من "+digits(NAMES.length)}
 NAMES.forEach(function(n,i){
-  var url=PAGE+"?n="+encodeURIComponent(n);
+  var url=PAGE+"?g="+CODES[i];
   var msg="السلام عليكم ورحمة الله\nحيّاك الله "+n+"، نشكر لك تشريفنا في أمسية شتاء مرات، وهذه ذكرى من الليلة:\n"+url+"\nمع تحيات بلدية محافظة مرات";
   var li=document.createElement("li"); if(sent[n]) li.className="done";
   li.innerHTML='<span class="n">'+digits(i+1)+'</span><span class="nm"></span><a class="s" target="_blank" rel="noopener">'+wa+'أرسل</a>';
