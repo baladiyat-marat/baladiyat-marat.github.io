@@ -75,5 +75,10 @@ footer{text-align:center;padding:26px 16px 34px;font-size:14px;color:#8b6a4a}foo
 <script>
 var GUESTS={"q9k7": "احمد عوض الشهري", "x2va": "بدر مبارك العصيمي", "vnwa": "جاسم الدلبحي", "ut9d": "جهز عبدالله الحزيمي", "7857": "خالد الدباسي", "kq88": "خالد بن حمد اليوسف", "99fs": "دغيشم فهد الدغيشم", "cqmh": "م/ عبدالله محمد التميمي", "99zw": "زيد بن خالد العقيل", "d278": "سالم بن محمد العيدي", "wsqu": "سامي فتحي عودة", "5asj": "سعد علي العليان", "6hu3": "سفر العلياني", "96mv": "عبدالاله المشعل", "m4a4": "عبدالله الحربي", "dmcd": "عبدالله بن شخبوط بن عبدالله الحنابجه", "rzb4": "عبدالله عيد العصيمي", "cpdr": "عبدالملك الهويمل", "zzx9": "علي عسيري", "n7at": "فارس ال عادي", "hgbp": "فارس بن عبدالله ال عادي", "kwe5": "فهد بن حمد الشبيكي", "9wwd": "فيصل الجهني", "sfu9": "م/ فيصل ظافر القحطاني", "78p5": "م/ ابراهيم بن سعد ال عون", "w5ph": "م/ ريان محمد الجلاّل", "zckc": "م/ هيف بن مسفر بن مهوس", "hj3c": "م/ أحمد فهد الدلبحي", "3p2m": "م/ عبدالله القحطاني", "7nn2": "مبارك بدر جميلان الحمادي", "dw9z": "محمد ال عادي", "7spa": "محمد سالم القحطاني", "9vwy": "محمد علي محمود", "7kj4": "مسفر بن هادي القحطاني", "rhq8": "مسفر محمد القحطاني", "ffgd": "نايف بن فريح الحربي"};
 (function(){var P=new URLSearchParams(location.search),q=GUESTS[(P.get('g')||'').toLowerCase()]||P.get('n');if(q){q=q.trim().slice(0,40);if(q)document.getElementById('nm').textContent=q}})();
+(function(){if(location.protocol!=="https:")return;
+var P=new URLSearchParams(location.search),g=(P.get('g')||'').toLowerCase(),code=GUESTS[g]?g:'عام',id='';
+try{id=localStorage.getItem('marat-thikra-dev');if(!id){id=Math.random().toString(36).slice(2,10);localStorage.setItem('marat-thikra-dev',id)}}catch(e){id='x'}
+var f=new FormData();f.append('entry.2024947211','ذكرى|'+code+'|'+id);
+try{fetch('https://docs.google.com/forms/d/e/1FAIpQLScHRrltUyzSW48BmhsD4w4pERVRiWIIByqDPZMpSDNjweR8gQ/formResponse',{method:'POST',mode:'no-cors',body:f})}catch(e){}})();
 </script>
 </body></html>
