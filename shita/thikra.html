@@ -156,6 +156,8 @@ var LOG=function(){};
 (function(){if(location.protocol!=="https:")return;
 var code='عام',id='';
 try{id=localStorage.getItem('marat-thikra-dev');if(!id){id=Math.random().toString(36).slice(2,10);localStorage.setItem('marat-thikra-dev',id)}}catch(e){id='x'}
+var skip=false;try{if(/[?&]ana\b/.test(location.search)){localStorage.setItem('marat-thikra-skip','1');history.replaceState(null,'',location.pathname)}skip=localStorage.getItem('marat-thikra-skip')==='1'||id==='90kwzyou'}catch(e){}
+if(skip)return;
 LOG=function(ev){try{var f=new FormData();f.append('entry.2024947211','ذكرى|'+ev+'|'+id);fetch('https://docs.google.com/forms/d/e/1FAIpQLScHRrltUyzSW48BmhsD4w4pERVRiWIIByqDPZMpSDNjweR8gQ/formResponse',{method:'POST',mode:'no-cors',body:f})}catch(e){}};
 LOG(code);})();
 </script>
